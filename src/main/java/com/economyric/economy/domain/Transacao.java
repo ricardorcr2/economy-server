@@ -23,6 +23,10 @@ Transacao {
 
     private  TipoTransacaoEnum tipoTransacao;
 
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable=false)
+    private User user;
+
     public Transacao() {
     }
 
@@ -77,6 +81,14 @@ Transacao {
 
     public TipoTransacaoEnum getTipoTransacao() {
         return tipoTransacao;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setTipoTransacao(TipoTransacaoEnum tipoTransacao) {
